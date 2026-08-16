@@ -1,12 +1,12 @@
 package stack
 
-import gocontainer "github.com/gtantech/go-container"
+import "github.com/gtantech/go-container/container"
 
 type Stack[T any] interface {
 	Push(v T)
 	Pop() T
 	Peek() T
-	gocontainer.Container
+	container.Container
 }
 
 var _ Stack[int] = (*stack[int])(nil) //ensures stack implements Stack at compile time

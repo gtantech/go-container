@@ -1,11 +1,11 @@
 package queue
 
-import gocontainer "github.com/gtantech/go-container"
+import "github.com/gtantech/go-container/container"
 
 type Queue[T any] interface {
 	Enqueue(v T)
 	Dequeue() T
-	gocontainer.Container
+	container.Container
 }
 
 var _ Queue[int] = (*queue[int])(nil) //ensures queue implements Queue at compile time
